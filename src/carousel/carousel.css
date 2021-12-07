@@ -1,0 +1,89 @@
+.carousel {
+    position: relative;
+    border-radius: 20px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.carouselItemsContainer {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.carouselItems {
+    display: flex;
+    transition: transform 500ms ease;
+}
+
+.carouselItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carouselItem img {
+    max-width: 100%;
+}
+
+.controls {
+    --offset: 20px;
+}
+
+.prevBtn, .nextBtn {
+    --size: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--size);
+    height: var(--size);
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.prevBtn {
+    right: calc(100% + var(--offset));
+}
+
+.nextBtn {
+    left: calc(100% + var(--offset));
+}
+
+.prevBtn svg, .nextBtn svg {
+    width: var(--size);
+    height: var(--size);
+    fill: black;
+    transition: all 200ms ease;
+}
+
+.prevBtn:hover svg, .nextBtn:hover svg {
+    transform: scale(1.1);
+}
+
+.bullets {
+    position: absolute;
+    top: calc(100% + var(--offset));
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bullet {
+    --size: 15px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: transparent;
+    transition: all 200ms ease;
+}
+
+.bullet:hover {
+    transform: scale(1.1);
+}
+
+.bullet.active {
+    background-color: black;
+}
+
